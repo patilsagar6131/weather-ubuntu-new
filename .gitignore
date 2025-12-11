@@ -1,3 +1,5 @@
 target/
 .mvn/
 .vscode/
+/META-INF
+/dependency-reduced-pom.xml

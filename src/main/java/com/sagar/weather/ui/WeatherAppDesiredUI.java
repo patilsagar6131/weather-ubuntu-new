@@ -1,11 +1,8 @@
 package com.sagar.weather.ui;
 
 import java.io.FileInputStream;
-
 import com.sagar.weather.service.WeatherService;
 import com.sagar.weather.service.WeatherViewModel;
-import com.sagar.weather.util.Constants;
-
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -15,16 +12,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
-
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -54,13 +47,11 @@ public class WeatherAppDesiredUI extends Application {
         img2.setStyle("-fx-background-color: transparent");
 
         HBox hbox = new HBox();
-        // hbox.setAlignment(Pos.TOP_RIGHT);
         hbox.getChildren().addAll(img2, img1);
         hbox.setSpacing(1);
 
         HBox hbox2 = new HBox();
         Label label1 = new Label("Your City");
-        // label1.setFont(new Font("Calibri", 80));
         label1.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, 80));
         label1.setTextFill(Color.WHITE);
         Label label2 = new Label("Your feels like. . . ");
@@ -175,7 +166,7 @@ public class WeatherAppDesiredUI extends Application {
                         sunsetLabel.setText(vm.getSunset());
                     });
                 }).exceptionally(ex -> {
-                    System.out.println("exceptionaly clock");
+
                     Platform.runLater(() -> {
                         showError("Failed to fetch weather. Please check your API key and city.");
                     });
