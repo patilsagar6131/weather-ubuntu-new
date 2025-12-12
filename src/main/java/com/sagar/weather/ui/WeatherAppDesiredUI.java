@@ -1,6 +1,5 @@
 package com.sagar.weather.ui;
 
-import java.io.FileInputStream;
 import com.sagar.weather.service.WeatherService;
 import com.sagar.weather.service.WeatherViewModel;
 import javafx.application.Application;
@@ -29,9 +28,9 @@ public class WeatherAppDesiredUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         WeatherService service = new WeatherService();
-
-        Image image1 = new Image(new FileInputStream("src/main/java/com/sagar/weather/img/settings.png"));
-        Image image2 = new Image(new FileInputStream("src/main/java/com/sagar/weather/img/refresh.png"));
+        Image image1 = new Image(
+                getClass().getResource("/com/sagar/weather/img/settings.png").toExternalForm());
+        Image image2 = new Image(getClass().getResource("/com/sagar/weather/img/refresh.png").toExternalForm());
         ImageView view1 = new ImageView(image1);
         ImageView view2 = new ImageView(image2);
 
@@ -62,40 +61,40 @@ public class WeatherAppDesiredUI extends Application {
         hbox2.getChildren().addAll(label1, label2);
         hbox2.setSpacing(10);
 
-        ImageView temperature = new ImageView(
-                new Image(new FileInputStream("src/main/java/com/sagar/weather/img/temp.png")));
-        temperature.setFitHeight(50);
-        temperature.setFitWidth(50);
+        Image temperature = new Image(getClass().getResource("/com/sagar/weather/img/temp.png").toExternalForm());
+        ImageView tempView = new ImageView(temperature);
+        tempView.setFitHeight(50);
+        tempView.setFitWidth(50);
 
-        ImageView maxTemp = new ImageView(
-                new Image(new FileInputStream("src/main/java/com/sagar/weather/img/max.png")));
-        maxTemp.setFitHeight(50);
-        maxTemp.setFitWidth(50);
+        Image maxtemp = new Image(getClass().getResource("/com/sagar/weather/img/max.png").toExternalForm());
+        ImageView maxtempView = new ImageView(maxtemp);
+        maxtempView.setFitHeight(50);
+        maxtempView.setFitWidth(50);
 
-        ImageView minTemp = new ImageView(
-                new Image(new FileInputStream("src/main/java/com/sagar/weather/img/min.png")));
-        minTemp.setFitHeight(50);
-        minTemp.setFitWidth(50);
+        Image minTemp = new Image(getClass().getResource("/com/sagar/weather/img/min.png").toExternalForm());
+        ImageView minTempView = new ImageView(minTemp);
+        minTempView.setFitHeight(50);
+        minTempView.setFitWidth(50);
 
-        ImageView speed = new ImageView(
-                new Image(new FileInputStream("src/main/java/com/sagar/weather/img/speed.png")));
-        speed.setFitHeight(50);
-        speed.setFitWidth(50);
+        Image speed = new Image(getClass().getResource("/com/sagar/weather/img/speed.png").toExternalForm());
+        ImageView speedView = new ImageView(speed);
+        speedView.setFitHeight(50);
+        speedView.setFitWidth(50);
 
-        ImageView pressure = new ImageView(
-                new Image(new FileInputStream("src/main/java/com/sagar/weather/img/pressure.png")));
-        pressure.setFitHeight(50);
-        pressure.setFitWidth(50);
+        Image pressure = new Image(getClass().getResource("/com/sagar/weather/img/pressure.png").toExternalForm());
+        ImageView pressureView = new ImageView(pressure);
+        pressureView.setFitHeight(50);
+        pressureView.setFitWidth(50);
 
-        ImageView sunrise = new ImageView(
-                new Image(new FileInputStream("src/main/java/com/sagar/weather/img/sunrise.png")));
-        sunrise.setFitHeight(50);
-        sunrise.setFitWidth(50);
+        Image sunrise = new Image(getClass().getResource("/com/sagar/weather/img/sunrise.png").toExternalForm());
+        ImageView sunriseView = new ImageView(sunrise);
+        sunriseView.setFitHeight(50);
+        sunriseView.setFitWidth(50);
 
-        ImageView sunset = new ImageView(
-                new Image(new FileInputStream("src/main/java/com/sagar/weather/img/sunset.png")));
-        sunset.setFitHeight(50);
-        sunset.setFitWidth(50);
+        Image sunset = new Image(getClass().getResource("/com/sagar/weather/img/sunset.png").toExternalForm());
+        ImageView sunsetView = new ImageView(sunset);
+        sunsetView.setFitHeight(50);
+        sunsetView.setFitWidth(50);
 
         // labels
         Label tempLabel = new Label();
@@ -125,19 +124,19 @@ public class WeatherAppDesiredUI extends Application {
         conditionsLayout.setHgap(30);
         conditionsLayout.setVgap(30);
         conditionsLayout.setAlignment(Pos.CENTER);
-        conditionsLayout.add(temperature, 0, 0);
+        conditionsLayout.add(tempView, 0, 0);
         conditionsLayout.add(tempLabel, 1, 0);
-        conditionsLayout.add(maxTemp, 0, 1);
+        conditionsLayout.add(maxtempView, 0, 1);
         conditionsLayout.add(maxTempLabel, 1, 1);
-        conditionsLayout.add(minTemp, 0, 2);
+        conditionsLayout.add(minTempView, 0, 2);
         conditionsLayout.add(minTempLabel, 1, 2);
-        conditionsLayout.add(speed, 0, 3);
+        conditionsLayout.add(speedView, 0, 3);
         conditionsLayout.add(speedLabel, 1, 3);
-        conditionsLayout.add(pressure, 0, 4);
+        conditionsLayout.add(pressureView, 0, 4);
         conditionsLayout.add(pressureLabel, 1, 4);
-        conditionsLayout.add(sunrise, 0, 5);
+        conditionsLayout.add(sunriseView, 0, 5);
         conditionsLayout.add(sunriseLabel, 1, 5);
-        conditionsLayout.add(sunset, 0, 6);
+        conditionsLayout.add(sunsetView, 0, 6);
         conditionsLayout.add(sunsetLabel, 1, 6);
         img1.setOnMouseEntered(e -> img1.setStyle("-fx-background-color:        #ffffff22"));
         img1.setOnMouseExited(e -> img1.setStyle("-fx-background-color:        transparent"));
