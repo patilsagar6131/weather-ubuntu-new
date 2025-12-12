@@ -65,6 +65,17 @@
   </dependencies>
 
   <build>
+  <resources>
+  <resource>
+  <directory>src/main/resources/com/sagar/weather/img</directory>
+  <includes>
+  <include>**/*</include>
+  </includes>
+  <filtering>false</filtering>
+  <!-- <targetPath>src/main/java/com/sagar/weather/img</targetPath> -->
+  <targetPath>com/sagar/weather/img</targetPath>
+  </resource>
+  </resources>
   <plugins>
    <plugin>
       <groupId>org.apache.maven.plugins</groupId>
