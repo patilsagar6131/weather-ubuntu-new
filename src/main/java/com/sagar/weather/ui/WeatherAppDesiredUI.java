@@ -29,6 +29,7 @@ public class WeatherAppDesiredUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         WeatherService service = new WeatherService();
+
         Image image1 = new Image(new FileInputStream("src/main/java/com/sagar/weather/img/settings.png"));
         Image image2 = new Image(new FileInputStream("src/main/java/com/sagar/weather/img/refresh.png"));
         ImageView view1 = new ImageView(image1);

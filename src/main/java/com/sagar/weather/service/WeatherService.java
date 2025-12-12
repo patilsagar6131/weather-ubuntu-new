@@ -20,8 +20,9 @@ public class WeatherService {
     private static final ObjectMapper MAPPER = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
     public WeatherService() {
+
         this.apiKey = System.getenv("WEATHER_API_KEY");
-        ;
+
         this.client = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).connectTimeout(Duration.ofSeconds(5))
                 .build();
     }
@@ -39,7 +40,7 @@ public class WeatherService {
 
             throw new RuntimeException("Invalid url" + ie.getMessage(), ie);
         }
-
+        System.out.println(uri);
         final HttpRequest request = HttpRequest.newBuilder().uri(uri).GET().build();
 
         return client.sendAsync(request, HttpResponse.BodyHandlers.ofString()).thenApplyAsync(
