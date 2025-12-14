@@ -10,6 +10,15 @@ Purpose: I noticed that in ubuntu the weather info is getting shown only for big
 8. Then created WeatherViewModel class to add km/h ℃ hPa for windspeed temeprature and pressure. 
 9. Then created WeatherAppUI javafx class to run and display all the fetched weather entities.
 
-To use this app first set "WEATHER_API_KEY" environment variable using command export export WEATHER_API_KEY=your_real_api_key_here in linux and setx WEATHER_API_KEY "your_real_api_key_here" in windows powershell. You can get your api key from openweather website.
+
+To use this app first set "WEATHER_API_KEY" environment variable using below steps 
+i.sudo nano ~/.bashrc in terminal and your bashrc file will open in bash 
+ii. At the last add <export WEATHER_API_KEY="a3933e075640rrrrytoe"> excluding '<>'
+iii. Replace a3933e075640rrrrytoe with your openwether api key. this is dummy api key pasted here
+iv. Save the file with ctrl+O and pressing enter
+v. restart the system. 
+ 
+
+ in linux and setx WEATHER_API_KEY "your_real_api_key_here" in windows powershell. You can get your api key from openweather website.
 
 
