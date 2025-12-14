@@ -4,8 +4,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.sagar.weather</groupId>
-  <artifactId>ubuntu-weather</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <artifactId>weather</artifactId>
+  <version>app</version>
 
   <name>ubuntu-weather</name>
   <!-- FIXME change it to the project's website -->
